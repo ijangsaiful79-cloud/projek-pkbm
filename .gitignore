@@ -1,0 +1,15 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Large reference files (bukan aset website)
+White_And_Blue_Modern_Company_Profile_Cover_Document_A4_Portrait_20241112_14.png
+Konsep Website PKBM Banyuwangi.md
+
+# Claude project files
+.claude/
+
+# Editor
+.vscode/
+.idea/

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Blog dan artikel pendidikan kesetaraan dari PKBM AL-FATIH Banyuwangi."/>
+<title>Blog – PKBM AL-FATIH Banyuwangi</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="assets/css/style.css"/>
+<script src="assets/js/tailwind-config.js"></script>
+</head>
+<body class="font-body bg-white">
+<div id="site-nav"></div>
+
+<div class="page-header">
+  <div class="page-header-bg" style="background-image:url('https://images.pexels.com/photos/4144923/pexels-photo-4144923.jpeg?auto=compress&cs=tinysrgb&w=1600&h=400&dpr=1')"></div>
+  <div class="page-header-content">
+    <h1>Blog</h1>
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Beranda</a>
+      <span class="sep">/</span>
+      <span>Blog</span>
+    </nav>
+  </div>
+</div>
+
+<main class="py-16 lg:py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-3 gap-10">
+
+      <!-- Articles -->
+      <div class="lg:col-span-2">
+        <div id="blog-articles" class="space-y-10"></div>
+      </div>
+
+      <!-- Sidebar -->
+      <div class="space-y-8">
+        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6">
+          <h3 class="font-heading font-bold text-slate-800 mb-4">Kategori</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="flex justify-between text-sm text-slate-600 hover:text-blue-700 transition-colors py-1"><span>Pengumuman</span><span class="text-slate-400">4</span></a></li>
+            <li><a href="#" class="flex justify-between text-sm text-slate-600 hover:text-blue-700 transition-colors py-1"><span>Edukasi</span><span class="text-slate-400">6</span></a></li>
+            <li><a href="#" class="flex justify-between text-sm text-slate-600 hover:text-blue-700 transition-colors py-1"><span>Tips Belajar</span><span class="text-slate-400">5</span></a></li>
+            <li><a href="#" class="flex justify-between text-sm text-slate-600 hover:text-blue-700 transition-colors py-1"><span>Kisah Alumni</span><span class="text-slate-400">8</span></a></li>
+            <li><a href="#" class="flex justify-between text-sm text-slate-600 hover:text-blue-700 transition-colors py-1"><span>Info Program</span><span class="text-slate-400">3</span></a></li>
+          </ul>
+        </div>
+
+        <div class="bg-blue-700 rounded-2xl p-6 text-white">
+          <h3 class="font-heading font-bold text-lg mb-2">Mau Daftar?</h3>
+          <p class="text-blue-200 text-sm mb-5 leading-relaxed">Konsultasi gratis dengan admin kami. Kuota terbatas setiap gelombang.</p>
+          <a href="wa.html" class="block text-center bg-white text-blue-700 font-semibold py-3 rounded-xl text-sm hover:bg-blue-50 transition-colors">Hubungi Admin</a>
+        </div>
+
+        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6">
+          <h3 class="font-heading font-bold text-slate-800 mb-4">Artikel Terbaru</h3>
+          <ul id="blog-recent" class="space-y-4"></ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<div id="site-footer"></div>
+<script src="assets/js/site-data.js"></script>
+<script src="assets/js/components.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

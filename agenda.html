@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Agenda dan jadwal kegiatan PKBM AL-FATIH Banyuwangi."/>
+<title>Agenda – PKBM AL-FATIH Banyuwangi</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="assets/css/style.css"/>
+<script src="assets/js/tailwind-config.js"></script>
+</head>
+<body class="font-body bg-white">
+<div id="site-nav"></div>
+
+<div class="page-header">
+  <div class="page-header-bg" style="background-image:url('https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=1600&h=400&dpr=1')"></div>
+  <div class="page-header-content">
+    <h1>Agenda</h1>
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Beranda</a>
+      <span class="sep">/</span>
+      <span>Agenda</span>
+    </nav>
+  </div>
+</div>
+
+<main class="py-16 lg:py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-3 gap-10">
+
+      <!-- Agenda List -->
+      <div class="lg:col-span-2 space-y-6">
+
+        <!-- Upcoming heading -->
+        <div class="flex items-center justify-between mb-2">
+          <h2 class="font-heading font-bold text-slate-800 text-xl section-title">Agenda Mendatang</h2>
+        </div>
+
+        <div id="agenda-upcoming" class="space-y-6"></div>
+
+        <!-- Past agenda heading -->
+        <div class="pt-6">
+          <h2 class="font-heading font-bold text-slate-800 text-xl section-title mb-6">Agenda Terlaksana</h2>
+        </div>
+
+        <div id="agenda-past" class="space-y-6"></div>
+
+      </div>
+
+      <!-- Sidebar -->
+      <div class="space-y-8">
+
+        <div class="bg-blue-700 rounded-2xl p-6 text-white">
+          <h3 class="font-heading font-bold text-lg mb-2">Pendaftaran Dibuka</h3>
+          <p class="text-blue-200 text-sm mb-5 leading-relaxed">Daftar sebelum kuota gelombang 1 penuh. Konsultasi gratis tersedia setiap hari kerja.</p>
+          <a href="wa.html" class="block text-center bg-white text-blue-700 font-semibold py-3 rounded-xl text-sm hover:bg-blue-50 transition-colors">Daftar Sekarang</a>
+        </div>
+
+        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6">
+          <h3 class="font-heading font-bold text-slate-800 mb-4">Kalender Akademik</h3>
+          <ul class="space-y-3 text-sm">
+            <li class="flex justify-between items-center py-2 border-b border-slate-100">
+              <span class="text-slate-600">Pendaftaran Gel. 1</span>
+              <span class="text-slate-400 text-xs">Sep – Okt 2026</span>
+            </li>
+            <li class="flex justify-between items-center py-2 border-b border-slate-100">
+              <span class="text-slate-600">Orientasi Warga Belajar</span>
+              <span class="text-slate-400 text-xs">12 Okt 2026</span>
+            </li>
+            <li class="flex justify-between items-center py-2 border-b border-slate-100">
+              <span class="text-slate-600">KBM Semester Ganjil</span>
+              <span class="text-slate-400 text-xs">Okt – Des 2026</span>
+            </li>
+            <li class="flex justify-between items-center py-2 border-b border-slate-100">
+              <span class="text-slate-600">Ujian Tengah Semester</span>
+              <span class="text-slate-400 text-xs">Nov 2026</span>
+            </li>
+            <li class="flex justify-between items-center py-2 border-b border-slate-100">
+              <span class="text-slate-600">Ujian Akhir Semester</span>
+              <span class="text-slate-400 text-xs">Des 2026</span>
+            </li>
+            <li class="flex justify-between items-center py-2">
+              <span class="text-slate-600">Ujian Nasional Kesetaraan</span>
+              <span class="text-slate-400 text-xs">Apr – Mei 2027</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6">
+          <h3 class="font-heading font-bold text-slate-800 mb-3">Ingin Mendapat Info Agenda?</h3>
+          <p class="text-slate-500 text-sm mb-4 leading-relaxed">Hubungi admin kami via WhatsApp untuk mendapatkan informasi jadwal terbaru langsung ke ponsel Anda.</p>
+          <a href="wa.html" class="block text-center bg-blue-700 text-white font-semibold py-3 rounded-xl text-sm hover:bg-blue-800 transition-colors">Hubungi Admin</a>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<div id="site-footer"></div>
+<script src="assets/js/site-data.js"></script>
+<script src="assets/js/components.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

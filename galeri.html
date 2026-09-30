@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Galeri foto dan video kegiatan PKBM AL-FATIH Banyuwangi."/>
+<title>Galeri – PKBM AL-FATIH Banyuwangi</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="assets/css/style.css"/>
+<script src="assets/js/tailwind-config.js"></script>
+</head>
+<body class="font-body bg-white">
+<div id="site-nav"></div>
+
+<div class="page-header">
+  <div class="page-header-bg" style="background-image:url('https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=1600&h=400&dpr=1')"></div>
+  <div class="page-header-content">
+    <h1>Galeri</h1>
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Beranda</a>
+      <span class="sep">/</span>
+      <span>Galeri</span>
+    </nav>
+  </div>
+</div>
+
+<main class="py-16 lg:py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Filter -->
+    <div class="flex gap-2 mb-10 flex-wrap">
+      <button class="filter-btn active bg-blue-700 text-white px-5 py-2 rounded-lg text-sm font-semibold" data-filter="all">Semua</button>
+      <button class="filter-btn bg-slate-100 text-slate-600 px-5 py-2 rounded-lg text-sm font-semibold hover:bg-slate-200" data-filter="foto">Foto</button>
+      <button class="filter-btn bg-slate-100 text-slate-600 px-5 py-2 rounded-lg text-sm font-semibold hover:bg-slate-200" data-filter="video">Video</button>
+      <button class="filter-btn bg-slate-100 text-slate-600 px-5 py-2 rounded-lg text-sm font-semibold hover:bg-slate-200" data-filter="wisuda">Wisuda</button>
+    </div>
+
+    <!-- Grid -->
+    <div id="gallery-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3"></div>
+  </div>
+</main>
+
+<div id="site-footer"></div>
+<script src="assets/js/site-data.js"></script>
+<script src="assets/js/components.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
