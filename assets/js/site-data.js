@@ -49,7 +49,7 @@ window.PKBM = {
       category: { label: 'Pengumuman', color: 'blue' },
       date:     '30 September 2025',
       dateShort:'30 Sep 2025',
-      image:    'https://images.pexels.com/photos/5212317/pexels-photo-5212317.jpeg?auto=compress&cs=tinysrgb&w=600&h=375&dpr=1',
+      image:    'assets/images/foto-06.jpg',
       imageAlt: 'Pendaftaran 2025'
     },
     {
@@ -59,7 +59,7 @@ window.PKBM = {
       category: { label: 'Edukasi', color: 'blue' },
       date:     '15 September 2025',
       dateShort:'15 Sep 2025',
-      image:    'https://images.pexels.com/photos/4144923/pexels-photo-4144923.jpeg?auto=compress&cs=tinysrgb&w=600&h=375&dpr=1',
+      image:    'assets/images/foto-04.jpg',
       imageAlt: 'Pendidikan Kesetaraan'
     },
     {
@@ -69,7 +69,7 @@ window.PKBM = {
       category: { label: 'Tips Belajar', color: 'slate' },
       date:     '1 September 2025',
       dateShort:'1 Sep 2025',
-      image:    'https://images.pexels.com/photos/1181534/pexels-photo-1181534.jpeg?auto=compress&cs=tinysrgb&w=600&h=375&dpr=1',
+      image:    'assets/images/foto-03.jpg',
       imageAlt: 'Tips Belajar'
     },
     {
@@ -79,7 +79,7 @@ window.PKBM = {
       category: { label: 'Kisah Alumni', color: 'green' },
       date:     '20 Agustus 2025',
       dateShort:'20 Ags 2025',
-      image:    'https://images.pexels.com/photos/7516369/pexels-photo-7516369.jpeg?auto=compress&cs=tinysrgb&w=600&h=375&dpr=1',
+      image:    'assets/images/foto-08.jpg',
       imageAlt: 'Alumni Masuk PTN'
     }
   ],
@@ -200,18 +200,14 @@ window.PKBM = {
 
   /* ── Galeri ───────────────────────────────────────── */
   gallery: [
-    { src: 'https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&dpr=1', alt: 'Diskusi kelompok warga belajar', cat: 'foto',   wide: true,  isVideo: false },
-    { src: 'https://images.pexels.com/photos/8471799/pexels-photo-8471799.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&dpr=1', alt: 'Kegiatan belajar di kelas',      cat: 'foto',   wide: false, isVideo: false },
-    { src: 'https://images.pexels.com/photos/1181534/pexels-photo-1181534.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&dpr=1', alt: 'Sesi belajar bersama tutor',     cat: 'foto',   wide: false, isVideo: false },
-    { src: 'https://images.pexels.com/photos/7516369/pexels-photo-7516369.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&dpr=1', alt: 'Upacara wisuda alumni',          cat: 'wisuda', wide: false, isVideo: false },
-    { src: 'https://images.pexels.com/photos/256395/pexels-photo-256395.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&dpr=1',   alt: 'Suasana kelas',                  cat: 'foto',   wide: false, isVideo: false },
-    { src: 'https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&dpr=1', alt: 'Belajar mandiri',                 cat: 'foto',   wide: false, isVideo: false },
-    { src: 'https://images.pexels.com/photos/3762800/pexels-photo-3762800.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&dpr=1', alt: 'Video testimoni alumni',          cat: 'video',  wide: false, isVideo: true  },
-    { src: 'https://images.pexels.com/photos/5212317/pexels-photo-5212317.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&dpr=1', alt: 'Kelas Paket C',                   cat: 'wisuda', wide: false, isVideo: false },
-    { src: 'https://images.pexels.com/photos/4144923/pexels-photo-4144923.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&dpr=1', alt: 'Materi pembelajaran',             cat: 'foto',   wide: false, isVideo: false },
-    { src: 'https://images.pexels.com/photos/1164519/pexels-photo-1164519.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&dpr=1', alt: 'Video profil lembaga',            cat: 'video',  wide: false, isVideo: true  },
-    { src: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&dpr=1', alt: 'Alumni PKBM AL-FATIH',            cat: 'wisuda', wide: false, isVideo: false },
-    { src: 'https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&dpr=1', alt: 'Warga belajar',                   cat: 'foto',   wide: false, isVideo: false }
+    { src: 'assets/images/foto-01.jpg', alt: 'Suasana kegiatan belajar warga belajar PKBM AL-FATIH',              cat: 'kbm',        wide: true,  isVideo: false },
+    { src: 'assets/images/foto-02.jpg', alt: 'Kegiatan belajar mengajar bersama tutor',                           cat: 'kbm',        wide: false, isVideo: false },
+    { src: 'assets/images/foto-03.jpg', alt: 'Sesi belajar – tutor menjelaskan materi',                           cat: 'kbm',        wide: false, isVideo: false },
+    { src: 'assets/images/foto-04.jpg', alt: 'Proses belajar mengajar Paket PKBM AL-FATIH',                       cat: 'kbm',        wide: false, isVideo: false },
+    { src: 'assets/images/foto-05.jpg', alt: 'Pertemuan warga belajar bersama pengurus',                          cat: 'kbm',        wide: false, isVideo: false },
+    { src: 'assets/images/foto-06.jpg', alt: 'Visitasi Akreditasi – Tim Asesor BAN PAUD-PDM Provinsi Jawa Timur', cat: 'akreditasi', wide: false, isVideo: false },
+    { src: 'assets/images/foto-07.jpg', alt: 'Paparan dalam rangka Visitasi Akreditasi PKBM AL-FATIH 2025',       cat: 'akreditasi', wide: false, isVideo: false },
+    { src: 'assets/images/foto-08.jpg', alt: 'Tim Asesor BAN PAUD-PDM bersama pengurus PKBM AL-FATIH Banyuwangi', cat: 'akreditasi', wide: false, isVideo: false }
   ]
 
 };

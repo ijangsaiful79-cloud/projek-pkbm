@@ -297,7 +297,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ── Gallery Filter ────────────────────────────────── */
 .filter-btn        { transition: background var(--duration-fast) var(--ease-ui), color var(--duration-fast) var(--ease-ui); cursor: pointer; }
-.filter-btn.active { background: var(--clr-primary); color: #fff; }
+.filter-btn.active { background: #1e293b; color: #fff; }
 
 /* ── Form ──────────────────────────────────────────── */
 .form-input {
