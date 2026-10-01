@@ -59,7 +59,7 @@ window.PKBM = {
       category: { label: 'Edukasi', color: 'blue' },
       date:     '15 September 2025',
       dateShort:'15 Sep 2025',
-      image:    'assets/images/foto-04.jpg',
+      image:    'assets/images/foto-01.jpg',
       imageAlt: 'Pendidikan Kesetaraan'
     },
     {
@@ -69,7 +69,7 @@ window.PKBM = {
       category: { label: 'Tips Belajar', color: 'slate' },
       date:     '1 September 2025',
       dateShort:'1 Sep 2025',
-      image:    'assets/images/foto-03.jpg',
+      image:    'assets/images/foto-08.jpg',
       imageAlt: 'Tips Belajar'
     },
     {
