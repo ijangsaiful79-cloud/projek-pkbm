@@ -142,17 +142,16 @@
     if (!el || !D) return;
     var html = '';
     D.gallery.forEach(function (item) {
-      var wide = item.wide ? ' col-span-2 md:col-span-1' : '';
-      html += '<div class="gallery-grid-item gallery-item overflow-hidden rounded-xl aspect-square' + wide + '" data-cat="' + item.cat + '">';
+      html += '<div class="gallery-grid-item gallery-item overflow-hidden rounded-xl mb-3 break-inside-avoid" data-cat="' + item.cat + '">';
       if (item.isVideo) {
-        html += '<div class="relative w-full h-full bg-slate-800 cursor-pointer group">'
-          + '<img src="' + item.src + '" alt="' + item.alt + '" class="w-full h-full object-cover opacity-60 group-hover:opacity-70 transition-opacity" loading="lazy" width="600" height="600"/>'
+        html += '<div class="relative bg-slate-800 cursor-pointer group">'
+          + '<img src="' + item.src + '" alt="' + item.alt + '" class="w-full h-auto block opacity-60 group-hover:opacity-70 transition-opacity" loading="lazy"/>'
           + '<div class="absolute inset-0 flex items-center justify-center">'
           + '<div class="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-xl group-hover:scale-105 transition-transform">'
-          + '<svg class="w-6 h-6 text-blue-700 ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>'
+          + '<svg class="w-6 h-6 text-slate-700 ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>'
           + '</div></div></div>';
       } else {
-        html += '<img src="' + item.src + '" alt="' + item.alt + '" class="w-full h-full object-cover" loading="lazy" width="600" height="600"/>';
+        html += '<img src="' + item.src + '" alt="' + item.alt + '" class="w-full h-auto block" loading="lazy"/>';
       }
       html += '</div>';
     });

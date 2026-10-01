@@ -277,6 +277,8 @@ h1, h2, h3, h4, h5, h6 {
 /* ── Gallery ───────────────────────────────────────── */
 .gallery-item img    { transition: transform var(--duration-slow) var(--ease-ui); }
 .gallery-item:hover img { transform: scale(1.06); }
+#gallery-grid        { column-gap: 0.75rem; }
+#gallery-grid .gallery-grid-item { display: inline-block; width: 100%; }
 
 /* ── FAQ ───────────────────────────────────────────── */
 .faq-body          { max-height: 0; overflow: hidden; transition: max-height var(--duration-base) var(--ease-ui); }
