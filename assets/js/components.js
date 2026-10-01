@@ -15,7 +15,7 @@
 
   // ─── TOP BAR ──────────────────────────────────────────────────────────────
   const topBar = `
-<div class="bg-blue-900 text-blue-200 text-xs hidden md:block">
+<div id="site-topbar" class="bg-blue-900 text-blue-200 text-xs hidden md:block" style="overflow:hidden;max-height:2.25rem;transition:max-height 280ms cubic-bezier(0.4,0,0.2,1),opacity 220ms cubic-bezier(0.4,0,0.2,1);opacity:1;">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-9 gap-4">
     <div class="flex items-center gap-5">
       <span class="flex items-center gap-1.5">
@@ -49,7 +49,7 @@
 
   // ─── MAIN NAV ─────────────────────────────────────────────────────────────
   const nav = `
-<nav id="navbar" class="bg-white border-b border-slate-100 sticky top-0 z-50">
+<nav id="navbar" class="bg-white border-b border-slate-100" style="transition:box-shadow 200ms cubic-bezier(0.4,0,0.2,1);">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16">
 
@@ -72,9 +72,11 @@
             <svg class="w-3.5 h-3.5 chevron" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" d="M19 9l-7 7-7-7"/></svg>
           </button>
           <div class="nav-dropdown" role="menu">
-            <a href="profil.html" class="dropdown-item" role="menuitem">Tentang Lembaga</a>
-            <a href="profil.html#visi-misi" class="dropdown-item" role="menuitem">Visi dan Misi</a>
-            <a href="profil.html#filosofi-logo" class="dropdown-item" role="menuitem">Filosofi Logo</a>
+            <div class="nav-dropdown-inner">
+              <a href="profil.html" class="dropdown-item" role="menuitem">Tentang Lembaga</a>
+              <a href="profil.html#visi-misi" class="dropdown-item" role="menuitem">Visi dan Misi</a>
+              <a href="profil.html#filosofi-logo" class="dropdown-item" role="menuitem">Filosofi Logo</a>
+            </div>
           </div>
         </div>
 
@@ -84,9 +86,11 @@
             <svg class="w-3.5 h-3.5 chevron" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" d="M19 9l-7 7-7-7"/></svg>
           </button>
           <div class="nav-dropdown" role="menu">
-            <a href="paket-a.html" class="dropdown-item" role="menuitem">Paket A &ndash; Setara SD/MI</a>
-            <a href="paket-b.html" class="dropdown-item" role="menuitem">Paket B &ndash; Setara SMP/MTs</a>
-            <a href="paket-c.html" class="dropdown-item" role="menuitem">Paket C &ndash; Setara SMA/MA</a>
+            <div class="nav-dropdown-inner">
+              <a href="paket-a.html" class="dropdown-item" role="menuitem">Paket A &ndash; Setara SD/MI</a>
+              <a href="paket-b.html" class="dropdown-item" role="menuitem">Paket B &ndash; Setara SMP/MTs</a>
+              <a href="paket-c.html" class="dropdown-item" role="menuitem">Paket C &ndash; Setara SMA/MA</a>
+            </div>
           </div>
         </div>
 
@@ -97,7 +101,7 @@
       </div>
 
       <div class="flex items-center gap-2">
-        <a href="${WA_HREF}" class="hidden lg:inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-600 text-white font-semibold text-sm px-5 py-2 rounded-lg transition-colors">
+        <a href="${WA_HREF}" class="hidden lg:inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-white font-semibold text-sm px-5 py-2 rounded-lg transition-colors">
           Daftar Sekarang
         </a>
         <button id="nav-toggle" aria-label="Buka menu" class="lg:hidden p-2 text-slate-600 hover:text-slate-900 rounded-lg hover:bg-slate-100 transition-colors">
@@ -108,20 +112,33 @@
 
     <div id="mobile-menu" class="hidden lg:hidden border-t border-slate-100 pb-4 pt-2">
       <a href="index.html" class="mobile-link ${cls('index.html')}">Beranda</a>
-      <p class="mobile-group-label">Profil</p>
-      <a href="profil.html" class="mobile-link pl-8 ${cls('profil.html')}">Tentang Lembaga</a>
-      <a href="profil.html#visi-misi" class="mobile-link pl-8">Visi dan Misi</a>
-      <a href="profil.html#filosofi-logo" class="mobile-link pl-8">Filosofi Logo</a>
-      <p class="mobile-group-label">Program</p>
-      <a href="paket-a.html" class="mobile-link pl-8 ${cls('paket-a.html')}">Paket A &ndash; Setara SD/MI</a>
-      <a href="paket-b.html" class="mobile-link pl-8 ${cls('paket-b.html')}">Paket B &ndash; Setara SMP/MTs</a>
-      <a href="paket-c.html" class="mobile-link pl-8 ${cls('paket-c.html')}">Paket C &ndash; Setara SMA/MA</a>
+
+      <button class="mobile-accordion w-full flex items-center justify-between px-4 py-2.5 text-sm font-medium text-slate-700 hover:bg-slate-50 transition-colors" data-accordion="mobile-profil">
+        Profil
+        <svg class="w-4 h-4 text-slate-400 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" d="M19 9l-7 7-7-7"/></svg>
+      </button>
+      <div id="mobile-profil" class="hidden">
+        <a href="profil.html" class="mobile-link pl-8 ${cls('profil.html')}">Tentang Lembaga</a>
+        <a href="profil.html#visi-misi" class="mobile-link pl-8">Visi &amp; Misi</a>
+        <a href="profil.html#filosofi-logo" class="mobile-link pl-8">Filosofi Logo</a>
+      </div>
+
+      <button class="mobile-accordion w-full flex items-center justify-between px-4 py-2.5 text-sm font-medium text-slate-700 hover:bg-slate-50 transition-colors" data-accordion="mobile-program">
+        Program
+        <svg class="w-4 h-4 text-slate-400 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" d="M19 9l-7 7-7-7"/></svg>
+      </button>
+      <div id="mobile-program" class="hidden">
+        <a href="paket-a.html" class="mobile-link pl-8 ${cls('paket-a.html')}">Paket A &ndash; SD/MI</a>
+        <a href="paket-b.html" class="mobile-link pl-8 ${cls('paket-b.html')}">Paket B &ndash; SMP/MTs</a>
+        <a href="paket-c.html" class="mobile-link pl-8 ${cls('paket-c.html')}">Paket C &ndash; SMA/MA</a>
+      </div>
+
       <a href="galeri.html"  class="mobile-link ${cls('galeri.html')}">Galeri</a>
       <a href="blog.html"    class="mobile-link ${cls('blog.html')}">Blog</a>
       <a href="agenda.html"  class="mobile-link ${cls('agenda.html')}">Agenda</a>
       <a href="kontak.html"  class="mobile-link ${cls('kontak.html')}">Kontak</a>
       <div class="px-4 mt-3">
-        <a href="${WA_HREF}" class="block text-center bg-amber-500 hover:bg-amber-600 text-white font-semibold py-3 rounded-lg text-sm transition-colors">Daftar Sekarang</a>
+        <a href="${WA_HREF}" class="block text-center bg-amber-500 hover:bg-amber-400 text-white font-semibold py-3 rounded-lg text-sm transition-colors">Daftar Sekarang</a>
       </div>
     </div>
   </div>
@@ -202,7 +219,12 @@
   function inject() {
     const navEl    = document.getElementById('site-nav');
     const footerEl = document.getElementById('site-footer');
-    if (navEl)    navEl.innerHTML    = topBar + nav;
+    if (navEl) {
+      navEl.style.position = 'sticky';
+      navEl.style.top      = '0';
+      navEl.style.zIndex   = '500';
+      navEl.innerHTML = '<div id="site-header">' + topBar + nav + '</div>';
+    }
     if (footerEl) footerEl.innerHTML = footer;
     document.body.insertAdjacentHTML('beforeend', waBtn);
     bindEvents();
@@ -219,34 +241,95 @@
       a.addEventListener('click', () => document.getElementById('mobile-menu')?.classList.add('hidden'));
     });
 
-    // Desktop dropdown — close on outside click
-    document.addEventListener('click', e => {
-      document.querySelectorAll('.nav-item-dropdown').forEach(wrap => {
-        if (!wrap.contains(e.target)) wrap.classList.remove('open');
+    // Mobile accordion groups
+    document.querySelectorAll('.mobile-accordion').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var panelId = btn.getAttribute('data-accordion');
+        var panel = document.getElementById(panelId);
+        var chevron = btn.querySelector('svg');
+        if (!panel) return;
+        var isHidden = panel.classList.contains('hidden');
+        panel.classList.toggle('hidden', !isHidden);
+        chevron && chevron.classList.toggle('rotate-180', isHidden);
       });
     });
 
-    document.querySelectorAll('.nav-item-dropdown > button').forEach(btn => {
-      btn.addEventListener('click', e => {
+    // Auto-expand accordion group of the active page
+    document.querySelectorAll('.mobile-accordion').forEach(function (btn) {
+      var panelId = btn.getAttribute('data-accordion');
+      var panel = document.getElementById(panelId);
+      if (panel && panel.querySelector('.nav-active')) {
+        panel.classList.remove('hidden');
+        var chevron = btn.querySelector('svg');
+        chevron && chevron.classList.add('rotate-180');
+      }
+    });
+
+    // Desktop dropdown — CSS shows on hover; JS toggles .open for click/keyboard
+    function closeAllDropdowns() {
+      document.querySelectorAll('.nav-item-dropdown').forEach(function (w) {
+        w.classList.remove('open');
+        var b = w.querySelector(':scope > button');
+        if (b) b.setAttribute('aria-expanded', 'false');
+      });
+    }
+
+    document.querySelectorAll('.nav-item-dropdown > button').forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
         e.stopPropagation();
-        const wrap = btn.closest('.nav-item-dropdown');
-        const wasOpen = wrap.classList.contains('open');
-        document.querySelectorAll('.nav-item-dropdown').forEach(w => w.classList.remove('open'));
-        if (!wasOpen) wrap.classList.add('open');
+        var wrap    = btn.closest('.nav-item-dropdown');
+        var wasOpen = wrap.classList.contains('open');
+        closeAllDropdowns();
+        if (!wasOpen) {
+          wrap.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
       });
     });
 
-    // Scroll shadow
+    document.addEventListener('click', function () { closeAllDropdowns(); });
+
+    // Scroll: collapse topbar on scroll-down, shadow on navbar
     const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-      navbar?.classList.toggle('shadow-md', window.scrollY > 8);
+    const topbar = document.getElementById('site-topbar');
+    var lastScrollY = window.scrollY;
+    var rafPending = false;
+    window.addEventListener('scroll', function () {
+      if (rafPending) return;
+      rafPending = true;
+      requestAnimationFrame(function () {
+        var cur = window.scrollY;
+        var goingDown = cur > lastScrollY;
+
+        // Topbar: collapse when scrolling down, restore when back near top
+        if (topbar) {
+          if (cur < 40) {
+            topbar.style.maxHeight = '2.25rem';
+            topbar.style.opacity   = '1';
+          } else if (goingDown) {
+            topbar.style.maxHeight = '0';
+            topbar.style.opacity   = '0';
+          } else {
+            topbar.style.maxHeight = '2.25rem';
+            topbar.style.opacity   = '1';
+          }
+        }
+
+        if (navbar) navbar.classList.toggle('shadow-md', cur > 8);
+        lastScrollY = cur;
+        rafPending = false;
+      });
     }, { passive: true });
 
-    // Smooth anchor scroll
+    // Smooth anchor scroll (skip bare # links to avoid invalid selector error)
     document.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener('click', e => {
-        const target = document.querySelector(a.getAttribute('href'));
-        if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+        var href = a.getAttribute('href');
+        if (!href || href === '#') return;
+        try {
+          var target = document.querySelector(href);
+          if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+        } catch (_) {}
       });
     });
   }

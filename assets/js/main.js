@@ -4,22 +4,22 @@
 
   /* ── Color helpers ──────────────────────────────────── */
   var BADGE = {
-    blue:   'bg-blue-100 text-blue-700',
-    teal:   'bg-teal-100 text-teal-700',
-    amber:  'bg-amber-100 text-amber-700',
-    green:  'bg-green-100 text-green-700',
-    purple: 'bg-purple-100 text-purple-700',
-    slate:  'bg-slate-200 text-slate-600',
-    red:    'bg-red-100 text-red-700'
+    blue:   'bg-slate-100 text-slate-700',
+    teal:   'bg-slate-100 text-slate-700',
+    amber:  'bg-slate-100 text-slate-700',
+    green:  'bg-slate-100 text-slate-700',
+    purple: 'bg-slate-100 text-slate-700',
+    slate:  'bg-slate-100 text-slate-700',
+    red:    'bg-slate-100 text-slate-700'
   };
   var LABEL = {
-    blue:   'text-blue-600',
-    teal:   'text-teal-600',
-    amber:  'text-amber-600',
-    green:  'text-green-600',
-    purple: 'text-purple-600',
+    blue:   'text-slate-500',
+    teal:   'text-slate-500',
+    amber:  'text-slate-500',
+    green:  'text-slate-500',
+    purple: 'text-slate-500',
     slate:  'text-slate-500',
-    red:    'text-red-600'
+    red:    'text-slate-500'
   };
 
   function badge(cat) {
@@ -104,16 +104,16 @@
     el.innerHTML = html;
   }
 
-  var SVG_CLOCK = '<svg class="w-4 h-4 text-blue-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>';
-  var SVG_PIN   = '<svg class="w-4 h-4 text-blue-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><circle cx="12" cy="11" r="3"/></svg>';
+  var SVG_CLOCK = '<svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>';
+  var SVG_PIN   = '<svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><circle cx="12" cy="11" r="3"/></svg>';
 
   function agendaCard(item) {
     var up = item.status === 'upcoming';
-    var html = '<div class="border ' + (up ? 'border-blue-200 bg-blue-50/40' : 'border-slate-200 bg-slate-50') + ' rounded-2xl overflow-hidden">'
+    var html = '<div class="border ' + (up ? 'border-slate-200 bg-white' : 'border-slate-200 bg-slate-50') + ' rounded-2xl overflow-hidden">'
       + '<div class="grid sm:grid-cols-[auto_1fr] gap-0">'
       + '<div class="' + (up ? 'bg-blue-700' : 'bg-slate-400') + ' text-white flex flex-col items-center justify-center px-6 py-5 sm:py-0 min-w-[90px]">'
       + '<span class="font-heading font-bold text-3xl leading-none">' + item.date + '</span>'
-      + '<span class="' + (up ? 'text-blue-200' : 'text-slate-200') + ' text-sm mt-1">' + item.month + '</span>'
+      + '<span class="' + (up ? 'text-white/70' : 'text-slate-200') + ' text-sm mt-1">' + item.month + '</span>'
       + '</div>'
       + '<div class="p-5">'
       + badge(item.category)
@@ -239,15 +239,32 @@
     var tabs   = document.querySelectorAll('.tab-btn');
     var panels = document.querySelectorAll('.tab-panel');
     if (!tabs.length) return;
+
+    function activateTab(id) {
+      tabs.forEach(function (t)   { t.classList.remove('active'); });
+      panels.forEach(function (p) { p.classList.remove('active'); });
+      var btn = document.querySelector('.tab-btn[data-tab="' + id + '"]');
+      var panel = document.getElementById(id);
+      if (btn)   btn.classList.add('active');
+      if (panel) panel.classList.add('active');
+    }
+
     tabs.forEach(function (tab) {
       tab.addEventListener('click', function () {
-        tabs.forEach(function (t)   { t.classList.remove('active'); });
-        panels.forEach(function (p) { p.classList.remove('active'); });
-        tab.classList.add('active');
-        var target = document.getElementById(tab.dataset.tab);
-        if (target) target.classList.add('active');
+        activateTab(tab.dataset.tab);
+        history.replaceState(null, '', '#' + tab.dataset.tab);
       });
     });
+
+    function activateFromHash() {
+      var hash = window.location.hash.replace('#', '');
+      if (hash && document.querySelector('.tab-btn[data-tab="' + hash + '"]')) {
+        activateTab(hash);
+      }
+    }
+
+    activateFromHash();
+    window.addEventListener('hashchange', activateFromHash);
   }
 
   function initContactForm() {
