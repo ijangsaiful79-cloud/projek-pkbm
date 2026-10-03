@@ -15,7 +15,7 @@
 
   // ─── TOP BAR ──────────────────────────────────────────────────────────────
   const topBar = `
-<div id="site-topbar" class="bg-blue-900 text-blue-200 text-xs hidden md:block" style="overflow:hidden;max-height:2.25rem;transition:max-height 280ms cubic-bezier(0.4,0,0.2,1),opacity 220ms cubic-bezier(0.4,0,0.2,1);opacity:1;">
+<div id="site-topbar" class="bg-slate-800 text-slate-300 text-xs hidden md:block" style="overflow:hidden;max-height:2.25rem;transition:max-height 280ms cubic-bezier(0.4,0,0.2,1),opacity 220ms cubic-bezier(0.4,0,0.2,1);opacity:1;">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-9 gap-4">
     <div class="flex items-center gap-5">
       <span class="flex items-center gap-1.5">
@@ -32,7 +32,7 @@
         <svg class="w-3 h-3 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
         085807278828
       </a>
-      <div class="flex items-center gap-2 border-l border-blue-700 pl-4">
+      <div class="flex items-center gap-2 border-l border-slate-700 pl-4">
         <a href="https://instagram.com/pkbmalfatih" target="_blank" rel="noopener" aria-label="Instagram" class="hover:text-white transition-colors">
           <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
         </a>
@@ -54,12 +54,12 @@
     <div class="flex items-center justify-between h-16">
 
       <a href="index.html" class="flex items-center gap-3 flex-shrink-0">
-        <div class="w-9 h-9 rounded-lg bg-blue-700 flex items-center justify-center">
+        <div class="w-9 h-9 rounded-lg bg-amber-600 flex items-center justify-center">
           <span class="text-white font-heading font-bold text-sm">AF</span>
         </div>
         <div class="leading-tight">
           <p class="font-heading font-bold text-slate-800 text-base leading-none">PKBM AL-FATIH</p>
-          <p class="text-blue-600 text-xs font-medium">Banyuwangi</p>
+          <p class="text-amber-600 text-xs font-medium">Banyuwangi</p>
         </div>
       </a>
 
@@ -152,12 +152,12 @@
 
       <div class="lg:col-span-2">
         <div class="flex items-center gap-3 mb-4">
-          <div class="w-9 h-9 rounded-lg bg-blue-700 flex items-center justify-center flex-shrink-0">
+          <div class="w-9 h-9 rounded-lg bg-amber-600 flex items-center justify-center flex-shrink-0">
             <span class="text-white font-heading font-bold text-sm">AF</span>
           </div>
           <div>
             <p class="font-heading font-bold text-base leading-none">PKBM AL-FATIH</p>
-            <p class="text-blue-400 text-xs mt-0.5">Banyuwangi</p>
+            <p class="text-amber-400 text-xs mt-0.5">Banyuwangi</p>
           </div>
         </div>
         <p class="text-slate-400 text-sm leading-relaxed mb-5 max-w-xs">Mendidik Cerdas, Menciptakan Perubahan. Lembaga pendidikan non-formal resmi di bawah naungan Kemendikdasmen.</p>
@@ -197,7 +197,7 @@
             <span>Perum Pesat Gatra Blok H4, RT 1 RW 2, Kel. Kebalenan, Kec. Banyuwangi</span>
           </li>
           <li><a href="${WA_HREF}" class="flex items-center gap-2 hover:text-green-400 transition-colors"><svg class="w-4 h-4 text-slate-500 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>085807278828</a></li>
-          <li><a href="mailto:pkbmalfatih01@gmail.com" class="flex items-center gap-2 hover:text-blue-400 transition-colors"><svg class="w-4 h-4 text-slate-500 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>pkbmalfatih01@gmail.com</a></li>
+          <li><a href="mailto:pkbmalfatih01@gmail.com" class="flex items-center gap-2 hover:text-amber-400 transition-colors"><svg class="w-4 h-4 text-slate-500 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>pkbmalfatih01@gmail.com</a></li>
           <li class="text-slate-500 text-xs pt-1 leading-relaxed">Senin–Jumat: 08.00–17.00 WIB<br>Sabtu: 08.00–12.00 WIB</li>
         </ul>
       </div>
@@ -220,10 +220,12 @@
     const navEl    = document.getElementById('site-nav');
     const footerEl = document.getElementById('site-footer');
     if (navEl) {
-      navEl.style.position = 'sticky';
-      navEl.style.top      = '0';
-      navEl.style.zIndex   = '500';
-      navEl.innerHTML = '<div id="site-header">' + topBar + nav + '</div>';
+      navEl.style.position   = 'sticky';
+      navEl.style.top        = '0';
+      navEl.style.zIndex     = '500';
+      navEl.style.background = 'white';
+      navEl.style.overflow   = 'hidden';
+      navEl.innerHTML = '<div id="site-header" style="overflow:hidden">' + topBar + nav + '</div>';
     }
     if (footerEl) footerEl.innerHTML = footer;
     document.body.insertAdjacentHTML('beforeend', waBtn);
