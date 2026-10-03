@@ -91,27 +91,39 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ── Nav Links ─────────────────────────────────────── */
 .nav-link {
+  position: relative;
   display: inline-flex;
   align-items: center;
-  padding: 0 14px;
-  height: 64px;
+  padding: 8px 14px;
   font-family: var(--font-body);
-  font-size: 0.875rem;
+  font-size: 0.9375rem;
   font-weight: 500;
-  color: var(--clr-muted);
-  border-bottom: 2px solid transparent;
+  color: var(--clr-body);
+  border-radius: var(--radius-md);
   transition: color var(--duration-fast) var(--ease-ui),
-              border-color var(--duration-fast) var(--ease-ui);
+              background var(--duration-fast) var(--ease-ui);
   white-space: nowrap;
   background: none;
-  border-top: none;
-  border-left: none;
-  border-right: none;
+  border: none;
   cursor: pointer;
   text-decoration: none;
 }
-.nav-link:hover      { color: var(--clr-primary); }
-.nav-link.nav-active { color: var(--clr-primary); border-bottom-color: var(--clr-primary); font-weight: 600; }
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 2px;
+  height: 2px;
+  background: var(--clr-primary);
+  border-radius: 2px;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform var(--duration-base) var(--ease-ui);
+}
+.nav-link:hover            { color: var(--clr-foreground); background: var(--clr-primary-muted); }
+.nav-link.nav-active       { color: var(--clr-primary); font-weight: 600; }
+.nav-link.nav-active::after { transform: scaleX(1); }
 
 /* ── Dropdown ──────────────────────────────────────── */
 .nav-item-dropdown { position: relative; }
@@ -157,23 +169,42 @@ h1, h2, h3, h4, h5, h6 {
 .chevron { transition: transform var(--duration-base) var(--ease-ui); }
 
 /* ── Mobile Nav ────────────────────────────────────── */
+.mobile-menu {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 320ms var(--ease-ui),
+              opacity 220ms var(--ease-ui),
+              padding 220ms var(--ease-ui);
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.mobile-menu.open {
+  max-height: 560px;
+  opacity: 1;
+  padding-top: 8px;
+  padding-bottom: 16px;
+}
 .mobile-link {
-  display: block;
-  padding: 10px 16px;
-  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  margin: 2px 8px;
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
   font-weight: 500;
-  color: var(--clr-muted);
+  color: var(--clr-body);
   text-decoration: none;
   border-radius: var(--radius-md);
   transition: background var(--duration-fast) var(--ease-ui),
-              color var(--duration-fast) var(--ease-ui);
+              color var(--duration-fast) var(--ease-ui),
+              transform var(--duration-fast) var(--ease-ui);
   cursor: pointer;
   min-height: 44px;
-  display: flex;
-  align-items: center;
 }
 .mobile-link:hover      { background: var(--clr-primary-muted); color: var(--clr-primary); }
-.mobile-link.nav-active { color: var(--clr-primary); font-weight: 600; }
+.mobile-link:active     { transform: scale(0.98); }
+.mobile-link.nav-active { background: var(--clr-primary-muted); color: var(--clr-primary); font-weight: 600; }
 .mobile-group-label {
   padding: 8px 16px 4px;
   font-size: 0.6875rem;
@@ -217,24 +248,27 @@ h1, h2, h3, h4, h5, h6 {
   inset: 0;
   background-size: cover;
   background-position: center;
-  opacity: 0.18;
+  opacity: 0.22;
 }
 .page-header-content {
   position: relative;
-  max-width: 80rem;
+  max-width: 64rem;
   margin: 0 auto;
-  padding: 56px 24px 52px;
+  padding: 40px 24px 36px;
+  text-align: center;
 }
-@media (min-width: 640px) { .page-header-content { padding: 64px 32px 60px; } }
+@media (min-width: 640px) { .page-header-content { padding: 48px 32px 44px; } }
 .page-header-content h1 {
   font-family: var(--font-heading);
-  font-size: 2.25rem;
+  font-size: 1.875rem;
   font-weight: 700;
   color: #fff;
-  margin-bottom: 12px;
-  line-height: 1.2;
+  margin-bottom: 8px;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
 }
-@media (min-width: 1024px) { .page-header-content h1 { font-size: 2.75rem; } }
+@media (min-width: 1024px) { .page-header-content h1 { font-size: 2.25rem; } }
+.breadcrumb { justify-content: center; }
 
 .breadcrumb {
   display: flex;

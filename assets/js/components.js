@@ -15,91 +15,46 @@
 
   // ─── MAIN NAV ─────────────────────────────────────────────────────────────
   const nav = `
-<nav id="navbar" class="bg-white border-b border-slate-100" style="transition:box-shadow 200ms cubic-bezier(0.4,0,0.2,1);">
+<nav id="navbar" class="bg-white/90 backdrop-blur-md border-b border-slate-100" style="transition:box-shadow 200ms cubic-bezier(0.4,0,0.2,1);">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-16">
+    <div class="flex items-center h-16 gap-6">
 
       <a href="index.html" class="flex items-baseline gap-2 flex-shrink-0">
         <span class="font-heading font-bold text-slate-900 text-base tracking-tight">PKBM AL-FATIH</span>
-        <span class="text-slate-400 text-xs font-medium">Banyuwangi</span>
+        <span class="text-slate-400 text-xs font-medium hidden sm:inline">Banyuwangi</span>
       </a>
 
-      <div class="hidden lg:flex items-center">
+      <div class="hidden lg:flex items-center justify-center flex-1 gap-1">
         <a href="index.html" class="nav-link ${cls('index.html')}">Beranda</a>
-
-        <div class="nav-item-dropdown">
-          <button class="nav-link flex items-center gap-1 ${cls('profil.html')}" aria-haspopup="true" aria-expanded="false">
-            Profil
-            <svg class="w-3.5 h-3.5 chevron" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" d="M19 9l-7 7-7-7"/></svg>
-          </button>
-          <div class="nav-dropdown" role="menu">
-            <div class="nav-dropdown-inner">
-              <a href="profil.html" class="dropdown-item" role="menuitem">Tentang Lembaga</a>
-              <a href="profil.html#visi-misi" class="dropdown-item" role="menuitem">Visi dan Misi</a>
-              <a href="profil.html#filosofi-logo" class="dropdown-item" role="menuitem">Filosofi Logo</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="nav-item-dropdown">
-          <button class="nav-link flex items-center gap-1 ${cls(['paket-a.html','paket-b.html','paket-c.html'])}" aria-haspopup="true" aria-expanded="false">
-            Program
-            <svg class="w-3.5 h-3.5 chevron" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" d="M19 9l-7 7-7-7"/></svg>
-          </button>
-          <div class="nav-dropdown" role="menu">
-            <div class="nav-dropdown-inner">
-              <a href="paket-a.html" class="dropdown-item" role="menuitem">Paket A &ndash; Setara SD/MI</a>
-              <a href="paket-b.html" class="dropdown-item" role="menuitem">Paket B &ndash; Setara SMP/MTs</a>
-              <a href="paket-c.html" class="dropdown-item" role="menuitem">Paket C &ndash; Setara SMA/MA</a>
-            </div>
-          </div>
-        </div>
-
-        <a href="galeri.html" class="nav-link ${cls('galeri.html')}">Galeri</a>
+        <a href="profil.html" class="nav-link ${cls('profil.html')}">Profil</a>
+        <a href="program.html" class="nav-link ${cls(["program.html","paket-a.html","paket-b.html","paket-c.html"])}">Program</a>
         <a href="blog.html"   class="nav-link ${cls('blog.html')}">Blog</a>
-        <a href="agenda.html" class="nav-link ${cls('agenda.html')}">Agenda</a>
         <a href="kontak.html" class="nav-link ${cls('kontak.html')}">Kontak</a>
       </div>
 
-      <div class="flex items-center gap-2">
-        <a href="${WA_HREF}" class="hidden lg:inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-white font-semibold text-sm px-5 py-2 rounded-lg transition-colors">
-          Daftar Sekarang
+      <div class="flex items-center ml-auto lg:ml-0">
+        <a href="${WA_HREF}" class="hidden lg:inline-flex items-center gap-1.5 text-amber-700 hover:text-amber-800 font-semibold text-sm transition-colors">
+          Hubungi Admin
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" d="M9 5l7 7-7 7"/></svg>
         </a>
-        <button id="nav-toggle" aria-label="Buka menu" class="lg:hidden p-2 text-slate-600 hover:text-slate-900 rounded-lg hover:bg-slate-100 transition-colors">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <button id="nav-toggle" aria-label="Buka menu" aria-expanded="false" class="lg:hidden relative w-10 h-10 flex items-center justify-center text-slate-700 rounded-lg hover:bg-slate-100 active:bg-slate-200 transition-colors">
+          <svg class="nav-icon-open w-5 h-5 absolute inset-0 m-auto transition-all duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <svg class="nav-icon-close w-5 h-5 absolute inset-0 m-auto transition-all duration-300 opacity-0 scale-75 rotate-90" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg>
         </button>
       </div>
     </div>
 
-    <div id="mobile-menu" class="hidden lg:hidden border-t border-slate-100 pb-4 pt-2">
+    <div id="mobile-menu" class="mobile-menu lg:hidden border-t border-slate-100">
       <a href="index.html" class="mobile-link ${cls('index.html')}">Beranda</a>
-
-      <button class="mobile-accordion w-full flex items-center justify-between px-4 py-2.5 text-sm font-medium text-slate-700 hover:bg-slate-50 transition-colors" data-accordion="mobile-profil">
-        Profil
-        <svg class="w-4 h-4 text-slate-400 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" d="M19 9l-7 7-7-7"/></svg>
-      </button>
-      <div id="mobile-profil" class="hidden">
-        <a href="profil.html" class="mobile-link pl-8 ${cls('profil.html')}">Tentang Lembaga</a>
-        <a href="profil.html#visi-misi" class="mobile-link pl-8">Visi &amp; Misi</a>
-        <a href="profil.html#filosofi-logo" class="mobile-link pl-8">Filosofi Logo</a>
-      </div>
-
-      <button class="mobile-accordion w-full flex items-center justify-between px-4 py-2.5 text-sm font-medium text-slate-700 hover:bg-slate-50 transition-colors" data-accordion="mobile-program">
-        Program
-        <svg class="w-4 h-4 text-slate-400 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" d="M19 9l-7 7-7-7"/></svg>
-      </button>
-      <div id="mobile-program" class="hidden">
-        <a href="paket-a.html" class="mobile-link pl-8 ${cls('paket-a.html')}">Paket A &ndash; SD/MI</a>
-        <a href="paket-b.html" class="mobile-link pl-8 ${cls('paket-b.html')}">Paket B &ndash; SMP/MTs</a>
-        <a href="paket-c.html" class="mobile-link pl-8 ${cls('paket-c.html')}">Paket C &ndash; SMA/MA</a>
-      </div>
-
-      <a href="galeri.html"  class="mobile-link ${cls('galeri.html')}">Galeri</a>
+      <a href="profil.html" class="mobile-link ${cls('profil.html')}">Profil</a>
+      <a href="program.html" class="mobile-link ${cls(["program.html","paket-a.html","paket-b.html","paket-c.html"])}">Program</a>
       <a href="blog.html"    class="mobile-link ${cls('blog.html')}">Blog</a>
-      <a href="agenda.html"  class="mobile-link ${cls('agenda.html')}">Agenda</a>
       <a href="kontak.html"  class="mobile-link ${cls('kontak.html')}">Kontak</a>
-      <div class="px-4 mt-3">
-        <a href="${WA_HREF}" class="block text-center bg-amber-500 hover:bg-amber-400 text-white font-semibold py-3 rounded-lg text-sm transition-colors">Daftar Sekarang</a>
+      <div class="px-5 pt-3 mt-2 border-t border-slate-100">
+        <a href="${WA_HREF}" class="flex items-center justify-center gap-2 bg-amber-50 hover:bg-amber-100 text-amber-800 font-semibold text-sm px-5 py-3 rounded-lg transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          Hubungi Admin
+        </a>
       </div>
     </div>
   </div>
@@ -190,13 +145,41 @@
 
   function bindEvents() {
     // Mobile toggle
-    document.getElementById('nav-toggle')?.addEventListener('click', () => {
-      document.getElementById('mobile-menu')?.classList.toggle('hidden');
+    document.getElementById('nav-toggle')?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const btn   = document.getElementById('nav-toggle');
+      const menu  = document.getElementById('mobile-menu');
+      const open  = document.querySelector('.nav-icon-open');
+      const close = document.querySelector('.nav-icon-close');
+      if (!menu || !btn) return;
+      const isOpen = menu.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      btn.setAttribute('aria-label', isOpen ? 'Tutup menu' : 'Buka menu');
+      if (open && close) {
+        open.classList.toggle('opacity-0', isOpen);
+        open.classList.toggle('scale-75', isOpen);
+        open.classList.toggle('-rotate-90', isOpen);
+        close.classList.toggle('opacity-0', !isOpen);
+        close.classList.toggle('scale-75', !isOpen);
+        close.classList.toggle('rotate-90', !isOpen);
+      }
     });
 
     // Close mobile on link click
     document.querySelectorAll('#mobile-menu a').forEach(a => {
-      a.addEventListener('click', () => document.getElementById('mobile-menu')?.classList.add('hidden'));
+      a.addEventListener('click', () => {
+        const menu  = document.getElementById('mobile-menu');
+        const btn   = document.getElementById('nav-toggle');
+        const open  = document.querySelector('.nav-icon-open');
+        const close = document.querySelector('.nav-icon-close');
+        if (menu) menu.classList.remove('open');
+        if (btn) { btn.setAttribute('aria-expanded', 'false'); btn.setAttribute('aria-label', 'Buka menu'); }
+        if (open && close) {
+          open.classList.remove('opacity-0', 'scale-75', '-rotate-90');
+          close.classList.add('opacity-0', 'scale-75');
+          close.classList.remove('rotate-90');
+        }
+      });
     });
 
     // Mobile accordion groups
@@ -223,7 +206,7 @@
       }
     });
 
-    // Desktop dropdown — CSS shows on hover; JS toggles .open for click/keyboard
+    // Desktop dropdown: CSS shows on hover; JS toggles .open for click/keyboard
     function closeAllDropdowns() {
       document.querySelectorAll('.nav-item-dropdown').forEach(function (w) {
         w.classList.remove('open');
